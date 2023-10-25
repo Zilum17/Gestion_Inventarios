@@ -1,0 +1,217 @@
+
+.nav{
+    background: var(--fifth-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    row-gap: 6rem;
+    position: fixed;
+    width: 22rem;
+    height: 100%;
+    transition: width .7s;
+    overflow: hidden;
+    z-index: 10;
+    box-shadow: -5px 0 20px var(--fourth-color);
+}
+.nav-mini{
+    width: 8rem;
+}
+header{
+    display: flex;
+    width: 22rem;
+    height: 6rem;
+    justify-content: start;
+}
+.header_head{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 22rem;
+    height: 6rem;
+}
+.header_icon > p{
+    color: var(--fifth-color);
+    font-weight: 500;
+}
+.header_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--fourth-color);
+    width: 4rem;
+    height: 4rem;
+    box-shadow: 0 0 10px var(--fourth-color);
+    font-size: 1.5rem;
+    z-index: 10;
+}
+.header_icon:hover{
+    animation: jello-horizontal 0.9s both;
+}
+@keyframes jello-horizontal {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+    30% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+      transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+.header_title >p {
+    color: var(--fourth-color);
+}
+.header_title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12rem;
+    height: 4rem;
+    opacity: 1;
+    transform: translateX(0%);
+    transition: opacity 1.5s .2s,transform .5s .2s;
+}
+.nav_toggle{
+    position: fixed;
+    left: 20rem;
+    top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    width: 3rem;
+    height: 3rem;
+    /* box-shadow: 0 0 10px var(--primary-color); */
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 11;
+    transition: left .7s;
+    color: var(--fifth-color);
+}
+.nav_toggle > span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: transform .5s;
+}
+.rotate-span{
+    transform: rotate(180deg);
+}
+.move-i{
+    left: 7rem;
+}
+.nav_ul{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 22rem;
+    row-gap: 3rem;
+    height: 75%;
+
+}
+.nav_ul_li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+    width: 22rem;
+}
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--fourth-color)F;
+    transition: background .3s, box-shadow .3s, color .2s;
+}
+.nav_ul_li:nth-child(1) .title > p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+}
+.nav_ul_li:hover .title{
+    background: var(--second-color);
+    /* box-shadow: 0 0 10px var(--second-color); */
+    color: var(--fifth-color);
+}
+.name::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    transform: scaleX(0);
+    transform-origin: right;
+    background: var(--second-color);
+    transition: transform .5s;
+}
+.nav_ul_li:hover .name::after{
+    transform-origin: left;
+  transform: scaleX(1);
+}
+.nav_ul_li_link{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 6rem;
+    width: 22rem;
+    cursor: pointer;
+}
+.name{
+    display: flex;
+    align-items: center;
+    color: var(--fourth-color);
+    width: 12rem;
+    height: 4rem;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 400;
+    opacity: 1;
+    transform: translateX(0%);
+    transition: opacity 1.5s .2s,transform .5s .2s;
+}
+
+.hide{
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: opacity .16s,transform .5s;
+}
+.big{
+    font-size: 2rem !important;
+}
+.coverer{
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    animation: appear-nav .7s ease-in-out forwards;
+}
+@keyframes appear-nav {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

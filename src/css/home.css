@@ -1,0 +1,28 @@
+
+.sign{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70rem;
+  min-height: 50rem;
+  left: 16rem;
+  right: 8rem;
+  top: 2rem;
+  row-gap: 2rem;
+  background: var(--fourth-color);
+  overflow: hidden;
+}
+.prompt{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fifth-color);
+  width: 50rem;
+  height: 40rem;
+  font-size: 5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 16px;
+  font-weight: 500;
+}
