@@ -33,7 +33,6 @@ function QDpage() {
       }
     });
     if (document.querySelector(".qd_info-absolute").childNodes.length > 1) {
-      console.log(document.querySelector(".multitext_input"))
       document.querySelectorAll(".multitext_input").forEach((input) => {
         if (input.value == "") {
           input.parentElement.firstChild.innerText = "Falta rellenar un campo";

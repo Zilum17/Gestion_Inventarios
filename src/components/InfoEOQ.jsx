@@ -18,18 +18,21 @@ function InfoEOQ() {
           name="COSTO POR PEDIDO (S)"
           setdata={setDataEOQ}
           data={dataEOQ}
+          step="0.01"
         />
         <RowInfo
           keys="3"
           name="COSTO POR MANTENER (H)"
           setdata={setDataEOQ}
           data={dataEOQ}
+          step="0.01"
         />
         <RowInfo
           keys="4"
           name="COSTO UNITARIO (C)"
           setdata={setDataEOQ}
           data={dataEOQ}
+          step="0.01"
         />
       </div>
       <div

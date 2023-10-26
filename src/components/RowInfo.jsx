@@ -1,6 +1,6 @@
-function RowInfo({ keys, name, setdata, data }) {
+function RowInfo({ keys, name, setdata, data, step }) {
   const updateC = (a) => {
-    data[keys - 1] = parseInt(a);
+    data[keys - 1] = parseFloat(a);
     setdata(data);
   };
 
@@ -10,6 +10,7 @@ function RowInfo({ keys, name, setdata, data }) {
       <input
         className="inputEOQ"
         type="number"
+        step={step}
         onChange={(e) => {
           updateC(e.target.value || 0); // add validate
         }}

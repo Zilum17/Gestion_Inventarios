@@ -1,6 +1,6 @@
 function MultiText({keys, setData, data}) {
   const updateC = (datas, i) => {
-    data[i][keys - 1] = parseInt(datas);
+    data[i][keys - 1] = parseFloat(datas);
     setData(data);
   };
   return (
@@ -31,6 +31,7 @@ function MultiText({keys, setData, data}) {
         className="multitext_input"
         type="number"
         placeholder="$"
+        step="0.01"
         onChange={(e) => {
           updateC(e.target.value || 0, 2); // add validate
         }}

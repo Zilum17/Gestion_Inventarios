@@ -10,20 +10,37 @@ export function QDContextProvider(props) {
   const [checkQD, setCheckQD] = useState(false);
   const [viewEQD, setViewQD] = useState(false);
   const [swttglQD, setSwttglQD] = useState(false);
+  const [resolveQD, setResolveQD] = useState([[], [], []]);
+
   useEffect(() => {
     if (activateQD) {
-      console.log(dataMultQD[0].length)
-      if (dataQD[0] <= 0 || dataQD[1] <= 0 || dataQD[2] <= 0 || dataQD[3] <= 0 || dataMultQD[0].length <= 0) {
+      if (
+        dataQD[0] <= 0 ||
+        dataQD[1] <= 0 ||
+        (dataQD[2] <= 0 && dataQD[3] <= 0) ||
+        dataMultQD[0].length <= 0 ||
+        dataMultQD[1].length <= 0 ||
+        dataMultQD[2].length <= 0
+      ) {
         setActivateQD(false);
-        console.log(dataMultQD);
-      console.log(dataQD);
       } else {
         setCheckQD(true);
       }
-      
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activateQD]);
+  useEffect(() => {
+    if (checkQD) {
+      console.log(dataMultQD)
+      if (dataQD[2] <= 0) {
+        for (let i = 0; i < dataMultQD[0].length; i++) {
+          resolveQD[0][i] = Math.ceil(Math.sqrt((2*dataQD[0]*dataQD[1])/(dataQD[3] * dataMultQD[2][i])))
+        }
+        console.log(resolveQD)
+      }
+      setResolveQD(resolveQD);
+    }
+  }, [checkQD]);
   return (
     <QDContext.Provider
       value={{
@@ -41,6 +58,7 @@ export function QDContextProvider(props) {
         setCheckQD,
         swttglQD,
         setSwttglQD,
+        resolveQD,
       }}
     >
       {props.children}

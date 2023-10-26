@@ -2,10 +2,12 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToggleContext } from "../context/ToggleContext.jsx";
 import { EOQContext } from "../context/EoqContext.jsx";
+import { QDContext } from "../context/QdContext.jsx";
 function NavButton({ linkTo, title, name, clas = " " }) {
-  const { toggle,setToggle } = useContext(ToggleContext);
-  const { setSwttgl, setSwttgl_1, setVisible, setViewEOQ,setActivateEOQ} =
+  const { toggle, setToggle } = useContext(ToggleContext);
+  const { setSwttgl, setSwttgl_1, setVisible, setViewEOQ, setActivateEOQ } =
     useContext(EOQContext);
+  const { setIncrement1, setDataMultQD } = useContext(QDContext);
   const navigate = useNavigate();
   return (
     <li className={"nav_ul_li ".concat(toggle ? "" : "li-mini")}>
@@ -17,8 +19,10 @@ function NavButton({ linkTo, title, name, clas = " " }) {
           setSwttgl_1(false);
           setViewEOQ(false);
           setVisible("");
-          setToggle(false)
-          setActivateEOQ(false)
+          setIncrement1(0);
+          setToggle(false);
+          setActivateEOQ(false);
+          setDataMultQD([[], [], []])
         }}
       >
         <span className={"title ".concat(clas)}>

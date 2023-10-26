@@ -251,6 +251,7 @@ body{
     padding-top: 3rem;
     padding-bottom: 3rem;
     z-index: 3;
+    
     background: var(--fourth-color);
 }
 .graph{
@@ -273,6 +274,7 @@ body{
     flex-wrap: wrap;
     width: 85%;
     min-height: 36rem;
+    overflow: hidden;
     background: var(--fifth-color);
 }
 .data-complete{

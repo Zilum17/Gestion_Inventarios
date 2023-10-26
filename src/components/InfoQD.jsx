@@ -43,18 +43,21 @@ function InfoQD() {
             name="COSTO POR PEDIDO (S)"
             data={dataQD}
             setdata={setDataQD}
+            step="0.01"
           />
           <RowInfo
             keys="3"
             name="COSTO POR MANTENER (H)"
             data={dataQD}
             setdata={setDataQD}
+            step="0.01"
           />
           <RowInfo
             keys="4"
             name="PORCENTAJE DEL COSTO (I)"
             data={dataQD}
             setdata={setDataQD}
+            step="0.01"
           />
         </div>
         <div className="section-qd_info qd_info">
