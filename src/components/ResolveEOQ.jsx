@@ -5,6 +5,7 @@ function ResolveEOQ() {
   const { viewEOQ, resolveEOQ } = useContext(EOQContext);
   const nameData = [
     [
+      "costo total",
       "Cantidad optima a ordenar",
       "inventario promedio",
       "órdenes por periodo",
@@ -12,7 +13,6 @@ function ResolveEOQ() {
       "costo de mantenimiento anual",
       "costo total de inventario",
       "costo unitario",
-      "costo total",
       "demanda diaria",
       "punto de reorden",
     ],

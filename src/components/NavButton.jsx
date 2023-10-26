@@ -7,7 +7,16 @@ function NavButton({ linkTo, title, name, clas = " " }) {
   const { toggle, setToggle } = useContext(ToggleContext);
   const { setSwttgl, setSwttgl_1, setVisible, setViewEOQ, setActivateEOQ } =
     useContext(EOQContext);
-  const { setIncrement1, setDataMultQD } = useContext(QDContext);
+  const {
+    setIncrement1,
+    setDataMultQD,
+    setDataQD,
+    setActivateQD,
+    setViewQD,
+    setCheckQD,
+    setSwttglQD,
+    setResolveQD
+  } = useContext(QDContext);
   const navigate = useNavigate();
   return (
     <li className={"nav_ul_li ".concat(toggle ? "" : "li-mini")}>
@@ -22,7 +31,13 @@ function NavButton({ linkTo, title, name, clas = " " }) {
           setIncrement1(0);
           setToggle(false);
           setActivateEOQ(false);
-          setDataMultQD([[], [], []])
+          setDataMultQD([[], [], []]);
+          setDataQD([]);
+          setActivateQD(false);
+          setViewQD(false);
+          setCheckQD(false);
+          setSwttglQD(false);
+          setResolveQD([[], [], [], [], [], [], []])
         }}
       >
         <span className={"title ".concat(clas)}>

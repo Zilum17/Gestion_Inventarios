@@ -68,7 +68,13 @@ function EOQpage() {
     });
   }
   const item = viewEOQ ? <ResolveEOQ /> : "";
-  const graph = swttgl_1? <div className="graph"><Graph/></div>:"";
+  const graph = swttgl_1 ? (
+    <div className="graph">
+      <Graph />
+    </div>
+  ) : (
+    ""
+  );
   return (
     <div className="principalEOQ">
       <div className="naveoq">
@@ -97,7 +103,7 @@ function EOQpage() {
       <div className="info">
         <InfoEOQ />
         {item}
-          {graph}
+        {graph}
       </div>
     </div>
   );

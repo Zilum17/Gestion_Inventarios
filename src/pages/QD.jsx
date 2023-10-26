@@ -5,12 +5,13 @@ import InfoQD from "../components/InfoQD.jsx";
 import TextFieldI from "../components/TextFieldI.jsx";
 import { useContext, useEffect } from "react";
 import { QDContext } from "../context/QdContext.jsx";
+import ResolveQD from "../components/ResolveQD.jsx";
 function QDpage() {
   const {
     setIncrement1,
     activateQD,
     setActivateQD,
-    viewEQD,
+    viewQD,
     setViewQD,
     swttglQD,
     setSwttglQD,
@@ -24,6 +25,7 @@ function QDpage() {
     setDataQD(dataQD);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const item2 = viewQD ? <ResolveQD /> : "";
   function validate() {
     document.querySelectorAll(".inputEOQ").forEach((input) => {
       if (input.value == "") {
@@ -55,13 +57,14 @@ function QDpage() {
           setValue={setActivateQD}
           value2={swttglQD}
           setValue2={setSwttglQD}
-          view={viewEQD}
+          view={viewQD}
           setView={setViewQD}
           validate={validate}
         />
       </div>
       <div className="info">
         <InfoQD />
+        { item2}
       </div>
     </div>
   );

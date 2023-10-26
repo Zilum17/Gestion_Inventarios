@@ -58,12 +58,6 @@ function InfoEOQ() {
           setdata={setDataEOQ}
           data={dataEOQ}
         />
-        <RowInfo
-          keys="8"
-          name="STOCK DE SEGURIDAD"
-          setdata={setDataEOQ}
-          data={dataEOQ}
-        />
       </div>
     </form>
   );

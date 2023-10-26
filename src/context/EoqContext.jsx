@@ -37,16 +37,16 @@ export function EOQContextProvider(props) {
   }, [activateEOQ]);
   useEffect(() => {
     if (checkEOQ) {
-      resolveEOQ[0] = Math.ceil(
+      resolveEOQ[1] = Math.ceil(
         Math.sqrt((2 * dataEOQ[0] * dataEOQ[1]) / dataEOQ[2])
       );
-      resolveEOQ[1] = resolveEOQ[0] / 2;
-      resolveEOQ[2] = Math.ceil(dataEOQ[0] / resolveEOQ[0]);
-      resolveEOQ[3] = resolveEOQ[2] * dataEOQ[1];
-      resolveEOQ[4] = resolveEOQ[1] * dataEOQ[2];
-      resolveEOQ[5] = resolveEOQ[3] + resolveEOQ[4];
-      resolveEOQ[6] = dataEOQ[0] * dataEOQ[3];
-      resolveEOQ[7] = resolveEOQ[3] + resolveEOQ[4] + resolveEOQ[6];
+      resolveEOQ[2] = resolveEOQ[1] / 2;
+      resolveEOQ[3] = Math.ceil(dataEOQ[0] / resolveEOQ[1]);
+      resolveEOQ[4] = resolveEOQ[3] * dataEOQ[1];
+      resolveEOQ[5] = resolveEOQ[2] * dataEOQ[2];
+      resolveEOQ[6] = resolveEOQ[4] + resolveEOQ[5];
+      resolveEOQ[7] = dataEOQ[0] * dataEOQ[3];
+      resolveEOQ[0] = resolveEOQ[4] + resolveEOQ[5] + resolveEOQ[7];
       if (dataEOQ[4] != 0) {
         resolveEOQ[8] = dataEOQ[0] / dataEOQ[4];
         resolveEOQ[9] = resolveEOQ[8] * dataEOQ[6];
