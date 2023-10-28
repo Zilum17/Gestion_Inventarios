@@ -6,6 +6,7 @@ import TextFieldI from "../components/TextFieldI.jsx";
 import { useContext, useEffect } from "react";
 import { QDContext } from "../context/QdContext.jsx";
 import ResolveQD from "../components/ResolveQD.jsx";
+import GraphQD from "../components/GraphQD.jsx";
 function QDpage() {
   const {
     setIncrement1,
@@ -44,10 +45,22 @@ function QDpage() {
       });
     }
   }
+  const graph = swttglQD ? (
+    <div className="graph">
+      <GraphQD />
+    </div>
+  ) : (
+    ""
+  );
   return (
     <div className="principalQD">
       <div className="naveoq">
-        <SwitchBtn name="Grafico" />
+        <SwitchBtn
+          name="Grafico"
+          value={swttglQD}
+          setValue={setSwttglQD}
+          use={!viewQD}
+        />
         <TextFieldI
           name="Cantidad de Descuentos"
           setIncrement={setIncrement1}
@@ -64,7 +77,8 @@ function QDpage() {
       </div>
       <div className="info">
         <InfoQD />
-        { item2}
+        {item2}
+        {graph}
       </div>
     </div>
   );

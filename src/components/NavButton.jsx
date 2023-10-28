@@ -9,8 +9,6 @@ function NavButton({ linkTo, title, name, clas = " " }) {
     useContext(EOQContext);
   const {
     setIncrement1,
-    setDataMultQD,
-    setDataQD,
     setActivateQD,
     setViewQD,
     setCheckQD,
@@ -24,15 +22,14 @@ function NavButton({ linkTo, title, name, clas = " " }) {
         className="nav_ul_li_link"
         onClick={() => {
           navigate(linkTo, { replace: true });
+          const actualUrl = window.location.pathname;
           setSwttgl(false);
           setSwttgl_1(false);
           setViewEOQ(false);
           setVisible("");
-          setIncrement1(0);
+          actualUrl != "/QD" ? setIncrement1(0):"";
           setToggle(false);
           setActivateEOQ(false);
-          setDataMultQD([[], [], []]);
-          setDataQD([]);
           setActivateQD(false);
           setViewQD(false);
           setCheckQD(false);

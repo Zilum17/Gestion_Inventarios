@@ -1,36 +1,45 @@
 import CanvasJSReact from "@canvasjs/react-charts";
 import { useContext } from "react";
-import { EOQContext } from "../context/EoqContext.jsx";
-
+import { QDContext } from "../context/QdContext.jsx";
 let CanvasJS = CanvasJSReact.CanvasJS;
 let CanvasJSChart = CanvasJSReact.CanvasJSChart;
-function Graph() {
-  const { dataEOQ, swttgl_1, viewEOQ } = useContext(EOQContext);
+function GraphQD() {
+  const { viewQD, swttglQD, bestQDX, bestQDY, dataQD, dataMultQD } =
+    useContext(QDContext);
   let CT = [];
-  let CD = [];
-  let CM = [];
-  let q = 0;
-  let d = 0;
-    if (swttgl_1 && viewEOQ) {
-
-  q = Math.sqrt((2 * dataEOQ[0] * dataEOQ[1]) / dataEOQ[2]);
-  d = ((q * dataEOQ[2]) / 2) + ((dataEOQ[0] * dataEOQ[1]) / q)
-
-  
-  for (let i = q/2; i < q * 2; i+=(1/2)) {
-    CD.push({ y: (dataEOQ[0] * dataEOQ[1]) / i, x: i });
-    CM.push({ y: (i * dataEOQ[2]) / 2, x: i });
-    CT.push({ y: ((i * dataEOQ[2]) / 2) + ((dataEOQ[0] * dataEOQ[1]) / i), x: i });
-  }
+  let maxIteration = 0;
+  if (swttglQD && viewQD) {
+    for (let i = 0; i < dataMultQD[0].length; i++) {
+      maxIteration =
+        bestQDY * 2 > dataMultQD[1][i] ? dataMultQD[1][i] : bestQDY * 2;
+      if (dataQD[3] <= 0) {
+        for (let j = dataMultQD[0][i]; j < maxIteration; j+=1/2) {
+          console.log(dataQD[3])
+          CT.push({
+            y:
+              ((j / 2)*dataQD[2]) + ((dataQD[0] * dataQD[1]) / j) + (dataQD[0] * dataMultQD[2][i]),
+            x: j,
+          });
+        }
+      }else{
+        for (let j = dataMultQD[0][i]; j < maxIteration; j+=1/2) {
+          console.log(dataQD[3])
+          CT.push({
+            y:
+              ((j / 2)*(dataMultQD[2][i] * dataQD[3])) + ((dataQD[0] * dataQD[1]) / j) + (dataQD[0] * dataMultQD[2][i]),
+            x: j,
+          });
+        }
+      }
+      
     }
-  CanvasJS.addColorSet("colors",
-  [
-
-  "#ef233c",
-  "#8d99ae",
-  "#edf2f4",
-  "#d80032",
-  "#2b2d42"                
+  }
+  CanvasJS.addColorSet("colors", [
+    "#ef233c",
+    "#8d99ae",
+    "#edf2f4",
+    "#d80032",
+    "#2b2d42",
   ]);
   const options = {
     zoomEnabled: true,
@@ -47,16 +56,15 @@ function Graph() {
       crosshair: {
         enabled: true,
         snapToDataPoint: true,
-        
       },
-      gridColor: "#2b2d42"
+      gridColor: "#2b2d42",
     },
     axisX: {
       title: "Cantidad Optima",
       crosshair: {
         enabled: true,
-        snapToDataPoint: true
-      }
+        snapToDataPoint: true,
+      },
     },
     toolTip: {
       shared: true,
@@ -82,25 +90,9 @@ function Graph() {
       },
       {
         type: "spline",
-        name: "Costo de Pedidos Anual",
-        showInLegend: true,
-        dataPoints: CD,
-        markerSize: 0,
-        lineThickness: 3,
-      },
-      {
-        type: "spline",
-        name: "Costo de Mantenimiento Anual",
-        showInLegend: true,
-        dataPoints: CM,
-        markerSize: 0,
-        lineThickness: 3,
-      },
-      {
-        type: "spline",
         name: "punto",
         showInLegend: true,
-        dataPoints: [{y: d, x: q}],
+        dataPoints: [{ y: bestQDX, x: bestQDY }],
         markerSize: 12,
       },
     ],
@@ -112,4 +104,4 @@ function Graph() {
   );
 }
 
-export default Graph;
+export default GraphQD;

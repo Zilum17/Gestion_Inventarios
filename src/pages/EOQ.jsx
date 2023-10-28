@@ -5,7 +5,7 @@ import SwitchBtn from "../components/SwitchBtn.jsx";
 import InfoEOQ from "../components/InfoEOQ.jsx";
 import ResolveEOQ from "../components/ResolveEOQ.jsx";
 import ButtonResolve from "../components/ButtonResolve.jsx";
-import Graph from "../components/Graph.jsx";
+import GraphEOQ from "../components/GraphEOQ.jsx";
 
 function EOQpage() {
   const {
@@ -70,7 +70,7 @@ function EOQpage() {
   const item = viewEOQ ? <ResolveEOQ /> : "";
   const graph = swttgl_1 ? (
     <div className="graph">
-      <Graph />
+      <GraphEOQ />
     </div>
   ) : (
     ""
