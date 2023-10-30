@@ -45,6 +45,8 @@ function QDpage() {
       });
     }
   }
+
+
   const graph = swttglQD ? (
     <div className="graph">
       <GraphQD />
@@ -53,34 +55,34 @@ function QDpage() {
     ""
   );
   return (
-    <div className="principalQD">
-      <div className="naveoq">
-        <SwitchBtn
-          name="Grafico"
-          value={swttglQD}
-          setValue={setSwttglQD}
-          use={!viewQD}
-        />
-        <TextFieldI
-          name="Cantidad de Descuentos"
-          setIncrement={setIncrement1}
-        />
-        <ButtonResolve
-          value={activateQD}
-          setValue={setActivateQD}
-          value2={swttglQD}
-          setValue2={setSwttglQD}
-          view={viewQD}
-          setView={setViewQD}
-          validate={validate}
-        />
+      <div className="principalQD">
+        <div className="naveoq">
+          <SwitchBtn
+            name="Grafico"
+            value={swttglQD}
+            setValue={setSwttglQD}
+            use={!viewQD}
+          />
+          <TextFieldI
+            name="Cantidad de Descuentos"
+            setIncrement={setIncrement1}
+          />
+          <ButtonResolve
+            value={activateQD}
+            setValue={setActivateQD}
+            value2={swttglQD}
+            setValue2={setSwttglQD}
+            view={viewQD}
+            setView={setViewQD}
+            validate={validate}
+          />
+        </div>
+        <div className="info">
+          <InfoQD />
+          {item2}
+          {graph}
+        </div>
       </div>
-      <div className="info">
-        <InfoQD />
-        {item2}
-        {graph}
-      </div>
-    </div>
   );
 }
 

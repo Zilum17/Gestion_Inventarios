@@ -42,7 +42,7 @@ export function QDContextProvider(props) {
         }
       }
       for (let i = 1; i < dataMultQD[0].length; i++) {
-        if (dataMultQD[2][i] < dataMultQD[2][i - 1]) {
+        if (dataMultQD[2][i] >= dataMultQD[2][i - 1]) {
           conditionalMulti = true;
         }
       }
@@ -133,6 +133,11 @@ export function QDContextProvider(props) {
           resolveQD[3][resolveQD[1].indexOf(Math.min(...resolveQD[1]))]
         );
         setSuccess(resolveQD[1].indexOf(Math.min(...resolveQD[1])));
+      }
+      for (let i = 1; i < resolveQD.length; i++) {
+        for (let j = 0; j < resolveQD[i].length; j++) {
+          resolveQD[i][j] = resolveQD[i][j].toFixed(1);
+        }
       }
       setViewQD(true);
       setResolveQD(resolveQD);

@@ -1,14 +1,13 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import RowInfo from "./RowInfo";
 import { QDContext } from "../context/QdContext";
 import MultiText from "./MultiText";
 
 function InfoQD() {
-  const { increment1, dataMultQD, setDataMultQD, dataQD, setDataQD } =
+  const { increment1, dataMultQD, setDataMultQD, dataQD,alertQD, setDataQD } =
     useContext(QDContext);
   let items = [];
   const create = () => {
-    
     items = [];
     for (let i = 1; i <= increment1; i++) {
       items.push(
@@ -16,15 +15,19 @@ function InfoQD() {
       );
     }
   };
-  // useEffect(() => {
-  //   const elementScroll = document.querySelector(".qd_info-absolute")
-  //   elementScroll.scrollTop = elementScroll.scrollHeight - elementScroll.clientHeight;
-  // }, [items])
+  useEffect(() => {
+    if (alertQD) {
+      const elementScroll = document.querySelector(".qd_info-absolute")
+    elementScroll.scrollTop = elementScroll.scrollHeight - elementScroll.clientHeight;
+    }
+  }, [alertQD])
 
   create();
-
+  
   const alert =
     increment1 < 1 ? <p className="alert_">No hay descuentos</p> : "";
+    const alert2 =
+    alertQD ? <p className="alert_">Datos mal ingresados</p> : "";
   return (
     <form className="section-qd">
       <div className="section-qd_info">
@@ -65,7 +68,9 @@ function InfoQD() {
             <p>Precio</p>
           </div>
           {alert}
+          {alert2}
           {items}
+          
         </div>
       </div>
     </form>

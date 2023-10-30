@@ -13,7 +13,8 @@ function NavButton({ linkTo, title, name, clas = " " }) {
     setViewQD,
     setCheckQD,
     setSwttglQD,
-    setResolveQD
+    setResolveQD,
+    setAlertQD
   } = useContext(QDContext);
   const navigate = useNavigate();
   return (
@@ -35,6 +36,7 @@ function NavButton({ linkTo, title, name, clas = " " }) {
           setCheckQD(false);
           setSwttglQD(false);
           setResolveQD([[], [], [], [], [], [], []])
+          setAlertQD(false)
         }}
       >
         <span className={"title ".concat(clas)}>

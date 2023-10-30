@@ -105,7 +105,7 @@ body{
     align-items: center;
     flex-direction: column;
     gap: 1rem;
-    width: 40%;
+    width: 45%;
     min-height: 34rem;
     background: var(--fifth-color);
     padding: 2rem;

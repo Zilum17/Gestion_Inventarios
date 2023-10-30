@@ -57,6 +57,10 @@ export function EOQContextProvider(props) {
         resolveEOQ[8] = dataEOQ[5];
         resolveEOQ[9] = resolveEOQ[8] * dataEOQ[6];
       }
+      for (let i = 0; i < resolveEOQ.length; i++) {
+        resolveEOQ[i] = resolveEOQ[i].toFixed(1);
+        
+      }
       setResolveEOQ(resolveEOQ);
       setViewEOQ(true);
       setCheckEOQ(false);

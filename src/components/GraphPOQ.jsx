@@ -1,25 +1,25 @@
 import CanvasJSReact from "@canvasjs/react-charts";
 import { useContext } from "react";
-import { EOQContext } from "../context/EoqContext.jsx";
+import { POQContext } from "../context/PoqContext";
 
 let CanvasJS = CanvasJSReact.CanvasJS;
 let CanvasJSChart = CanvasJSReact.CanvasJSChart;
-function GraphEOQ() {
-  const { dataEOQ, swttgl_1, viewEOQ } = useContext(EOQContext);
+function GraphPOQ() {
+  const { dataPOQ, swttglPOQ, viewPOQ, bestQDX, bestQDY } =
+    useContext(POQContext);
   let CT = [];
   let CD = [];
   let CM = [];
-  let q = 0;
-  let d = 0;
-  if (swttgl_1 && viewEOQ) {
-    q = Math.sqrt((2 * dataEOQ[0] * dataEOQ[1]) / dataEOQ[2]);
-    d = (q * dataEOQ[2]) / 2 + (dataEOQ[0] * dataEOQ[1]) / q;
-
-    for (let i = q / 2; i < q * 2; i += 1 / 2) {
-      CD.push({ y: (dataEOQ[0] * dataEOQ[1]) / i, x: i });
-      CM.push({ y: (i * dataEOQ[2]) / 2, x: i });
+  if (swttglPOQ && viewPOQ) {
+    let dataEx =
+      dataPOQ[6] <= 0
+        ? 1 - dataPOQ[0] / dataPOQ[5] / dataPOQ[4]
+        : 1 - dataPOQ[6] / dataPOQ[4];
+    for (let i = bestQDX / 2; i < bestQDX * 2; i += 1 / 2) {
+      CD.push({ y: (dataPOQ[0] / i) * dataPOQ[1], x: i });
+      CM.push({ y: (i*dataEx / 2) * dataPOQ[2], x: i });
       CT.push({
-        y: (i * dataEOQ[2]) / 2 + (dataEOQ[0] * dataEOQ[1]) / i,
+        y:i *dataPOQ[3] + ((dataPOQ[0] / i) * dataPOQ[1]) + ((i*dataEx / 2) * dataPOQ[2]),
         x: i,
       });
     }
@@ -98,7 +98,7 @@ function GraphEOQ() {
         type: "spline",
         name: "punto",
         showInLegend: true,
-        dataPoints: [{ y: d, x: q }],
+        dataPoints: [{ y: parseInt(bestQDY), x: parseInt(bestQDX) }],
         markerSize: 12,
       },
     ],
@@ -110,4 +110,4 @@ function GraphEOQ() {
   );
 }
 
-export default GraphEOQ;
+export default GraphPOQ;
