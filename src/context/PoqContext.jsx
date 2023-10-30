@@ -77,7 +77,9 @@ export function POQContextProvider(props) {
         setDataPOQ,
         setActivatePOQ,
         activatePOQ,
+        setCheckPOQ,
         resolvePOQ,
+        setResolvePOQ,
         bestQDX,
         bestQDY
       }}

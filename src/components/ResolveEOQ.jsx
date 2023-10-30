@@ -6,7 +6,7 @@ function ResolveEOQ() {
   const nameData = [
     [
       "costo total",
-      "Cantidad optima a ordenar",
+      "Cantidad óptima a ordenar",
       "inventario promedio",
       "órdenes por periodo",
       "costo de pedido anual",

@@ -15,7 +15,7 @@ function GraphPOQ() {
       dataPOQ[6] <= 0
         ? 1 - dataPOQ[0] / dataPOQ[5] / dataPOQ[4]
         : 1 - dataPOQ[6] / dataPOQ[4];
-    for (let i = bestQDX / 2; i < bestQDX * 2; i += 1 / 2) {
+    for (let i = bestQDX / 2; i < bestQDX * 2; i ++) {
       CD.push({ y: (dataPOQ[0] / i) * dataPOQ[1], x: i });
       CM.push({ y: (i*dataEx / 2) * dataPOQ[2], x: i });
       CT.push({

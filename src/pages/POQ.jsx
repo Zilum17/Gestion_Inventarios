@@ -46,7 +46,7 @@ function POQpage() {
       <div className="naveoq">
         <SwitchBtn
           use={!viewPOQ}
-          name="Grafico"
+          name="Gráfico"
           value={swttglPOQ}
           setValue={setSwttglPOQ}
         />

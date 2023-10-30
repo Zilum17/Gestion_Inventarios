@@ -58,7 +58,7 @@ function QDpage() {
       <div className="principalQD">
         <div className="naveoq">
           <SwitchBtn
-            name="Grafico"
+            name="Gráfico"
             value={swttglQD}
             setValue={setSwttglQD}
             use={!viewQD}

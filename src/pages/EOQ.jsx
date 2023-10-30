@@ -86,7 +86,7 @@ function EOQpage() {
         />
         <SwitchBtn
           use={!viewEOQ}
-          name="Grafico"
+          name="Gráfico"
           value={swttgl_1}
           setValue={setSwttgl_1}
         />

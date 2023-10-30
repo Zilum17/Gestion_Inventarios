@@ -6,8 +6,8 @@ function ResolveQD() {
   const nameData = [
     "Descuento",
     "costo total",
-    "Cantidad optima a ordenar",
-    "Cantidad optima redondeada",
+    "Cantidad óptima a ordenar",
+    "Cantidad óptima redondeada",
     "costo de pedido anual",
     "costo de mantenimiento anual",
     "costo unitario",

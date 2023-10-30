@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ToggleContext } from "../context/ToggleContext.jsx";
 import { EOQContext } from "../context/EoqContext.jsx";
 import { QDContext } from "../context/QdContext.jsx";
+import { POQContext } from "../context/PoqContext.jsx";
 function NavButton({ linkTo, title, name, clas = " " }) {
   const { toggle, setToggle } = useContext(ToggleContext);
   const { setSwttgl, setSwttgl_1, setVisible, setViewEOQ, setActivateEOQ } =
@@ -14,8 +15,15 @@ function NavButton({ linkTo, title, name, clas = " " }) {
     setCheckQD,
     setSwttglQD,
     setResolveQD,
-    setAlertQD
+    setAlertQD,
   } = useContext(QDContext);
+  const {
+    setViewPOQ,
+    setSwttglPOQ,
+    setActivatePOQ,
+    setCheckPOQ,
+    setResolvePOQ,
+  } = useContext(POQContext);
   const navigate = useNavigate();
   return (
     <li className={"nav_ul_li ".concat(toggle ? "" : "li-mini")}>
@@ -28,15 +36,20 @@ function NavButton({ linkTo, title, name, clas = " " }) {
           setSwttgl_1(false);
           setViewEOQ(false);
           setVisible("");
-          actualUrl != "/QD" ? setIncrement1(0):"";
+          actualUrl != "/QD" ? setIncrement1(0) : "";
           setToggle(false);
           setActivateEOQ(false);
           setActivateQD(false);
           setViewQD(false);
           setCheckQD(false);
           setSwttglQD(false);
-          setResolveQD([[], [], [], [], [], [], []])
-          setAlertQD(false)
+          setResolveQD([[], [], [], [], [], [], []]);
+          setAlertQD(false);
+          setViewPOQ(false);
+          setSwttglPOQ(false);
+          setCheckPOQ(false);
+          setActivatePOQ(false);
+          setResolvePOQ([]);
         }}
       >
         <span className={"title ".concat(clas)}>
