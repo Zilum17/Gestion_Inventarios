@@ -4,6 +4,7 @@ import { ToggleContext } from "../context/ToggleContext.jsx";
 import { EOQContext } from "../context/EoqContext.jsx";
 import { QDContext } from "../context/QdContext.jsx";
 import { POQContext } from "../context/PoqContext.jsx";
+import { ABCContext } from "../context/AbcContext.jsx";
 function NavButton({ linkTo, title, name, clas = " " }) {
   const { toggle, setToggle } = useContext(ToggleContext);
   const { setSwttgl, setSwttgl_1, setVisible, setViewEOQ, setActivateEOQ } =
@@ -24,6 +25,14 @@ function NavButton({ linkTo, title, name, clas = " " }) {
     setCheckPOQ,
     setResolvePOQ,
   } = useContext(POQContext);
+  const {
+    setSwttglABC,
+    setViewABC,
+    setCheckABC,
+    setActivateABC,
+    setIncrement2,
+    setAlertABC,
+  } = useContext(ABCContext);
   const navigate = useNavigate();
   return (
     <li className={"nav_ul_li ".concat(toggle ? "" : "li-mini")}>
@@ -50,6 +59,12 @@ function NavButton({ linkTo, title, name, clas = " " }) {
           setCheckPOQ(false);
           setActivatePOQ(false);
           setResolvePOQ([]);
+          setSwttglABC(false);
+          setViewABC(false);
+          setCheckABC(false);
+          setActivateABC(false);
+          actualUrl != "/ABC" ? setIncrement2(0) : "";
+          setAlertABC(false);
         }}
       >
         <span className={"title ".concat(clas)}>

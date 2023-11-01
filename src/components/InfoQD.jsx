@@ -4,7 +4,7 @@ import { QDContext } from "../context/QdContext";
 import MultiText from "./MultiText";
 
 function InfoQD() {
-  const { increment1, dataMultQD, setDataMultQD, dataQD,alertQD, setDataQD } =
+  const { increment1, dataMultQD, setDataMultQD, dataQD, alertQD, setDataQD } =
     useContext(QDContext);
   let items = [];
   const create = () => {
@@ -17,17 +17,17 @@ function InfoQD() {
   };
   useEffect(() => {
     if (alertQD) {
-      const elementScroll = document.querySelector(".qd_info-absolute")
-    elementScroll.scrollTop = elementScroll.scrollHeight - elementScroll.clientHeight;
+      const elementScroll = document.querySelector(".qd_info-absolute");
+      elementScroll.scrollTop =
+        elementScroll.scrollHeight - elementScroll.clientHeight;
     }
-  }, [alertQD])
+  }, [alertQD]);
 
   create();
-  
+
   const alert =
     increment1 < 1 ? <p className="alert_">No hay descuentos</p> : "";
-    const alert2 =
-    alertQD ? <p className="alert_">Datos mal ingresados</p> : "";
+  const alert2 = alertQD ? <p className="alert_">Datos mal ingresados</p> : "";
   return (
     <form className="section-qd">
       <div className="section-qd_info">
@@ -70,7 +70,6 @@ function InfoQD() {
           {alert}
           {alert2}
           {items}
-          
         </div>
       </div>
     </form>

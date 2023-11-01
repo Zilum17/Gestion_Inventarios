@@ -28,7 +28,7 @@ function Navbar() {
           <NavButton linkTo = {'/EOQ'} title={"EOQ"} name={"Economic Order Quantity"} />
           <NavButton linkTo = {'/QD'} title={"QD"} name={"Quantity Discount"} />
           <NavButton linkTo = {'/POQ'} title={"POQ"} name={"Production Order Quantity"} />
-          <NavButton title={"ABC"} name={"ABC Analisys"} />
+          <NavButton linkTo = {'/ABC'} title={"ABC"} name={"ABC Analisys"} />
         </ul>
       </nav>
       {item}

@@ -3,16 +3,15 @@ body{
     overflow-x: hidden;
 }
 .principalEOQ{
-    position: absolute;
+    position: relative;
     display: flex;
     min-width: 70rem;
     min-height: 60rem;
     flex-direction: column;
-    left: 16rem;
-    right: 8rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
     row-gap: 2rem;
+    transition: min-width .5s;
 }
 .info{
     position: relative;
@@ -106,7 +105,7 @@ body{
     flex-direction: column;
     gap: 1rem;
     width: 45%;
-    min-height: 34rem;
+    min-height: 36rem;
     background: var(--fifth-color);
     padding: 2rem;
 }
@@ -335,3 +334,8 @@ body{
     }
 }
 
+@media (min-width: 1377px) {
+    .principalEOQ{
+        min-width: 80rem
+    }
+}

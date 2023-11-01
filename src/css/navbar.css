@@ -3,7 +3,7 @@
     background: var(--fifth-color);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     row-gap: 6rem;
     position: fixed;
     width: 22rem;

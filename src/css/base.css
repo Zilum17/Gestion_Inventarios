@@ -1,0 +1,11 @@
+.base-root{
+    position: absolute;
+    min-width: calc(100% - 8rem);
+    height: 100%;
+    padding: 0 4rem;
+    left: 8rem;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

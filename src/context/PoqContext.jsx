@@ -18,7 +18,8 @@ export function POQContextProvider(props) {
         dataPOQ[1] <= 0 ||
         dataPOQ[2] <= 0 ||
         dataPOQ[4] <= 0 ||
-        dataPOQ[6] <= 0
+        dataPOQ[6] <= 0 ||
+        dataPOQ[6] >= dataPOQ[4]
       ) {
         setActivatePOQ(false);
       } else {
