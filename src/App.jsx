@@ -6,6 +6,7 @@ import EOQpage from "./pages/EOQ";
 import POQpage from "./pages/POQ.jsx";
 import ABCpage from "./pages/ABC.jsx";
 import "./css/base.css";
+
 function App() {
   return (
     <BrowserRouter>

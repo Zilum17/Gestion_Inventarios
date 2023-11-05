@@ -11,6 +11,7 @@ export function ABCContextProvider(props) {
   const [viewABC, setViewABC] = useState(false);
   const [swttglABC, setSwttglABC] = useState(false);
   const [alertABC, setAlertABC] = useState(false);
+  
   useEffect(() => {
     if (dataMultABC[2].length > increment2) {
       for (let i = 0; i < dataMultABC.length; i++) {

@@ -43,8 +43,8 @@ function EOQpage() {
   }
   function validate() {
     if (swttgl) {
-      document.querySelectorAll(".inputEOQ").forEach((input) => {
-        if (input.value == "") {
+      document.querySelectorAll(".inputEOQ").forEach((input, i) => {
+        if (input.value == "" && i != 3) {
           input.parentElement.firstChild.innerText =
             "Falta rellenar este campo";
         } else {
@@ -53,7 +53,7 @@ function EOQpage() {
       });
     } else {
       document.querySelectorAll(".inputEOQ").forEach((input, i) => {
-        if (input.value == "" && i < 4) {
+        if (input.value == "" && i < 4 && i != 3) {
           input.parentElement.firstChild.innerText =
             "Falta rellenar este campo";
         } else {

@@ -8,13 +8,13 @@
 .principalABC{
     position: relative;
     display: flex;
-    min-width: 70rem;
+    width: 70rem;
     min-height: 60rem;
     flex-direction: column;
     padding-top: 2rem;
     padding-bottom: 2rem;
     row-gap: 2rem;
-    transition: min-width .5s;
+    transition: width .5s;
 }
 .info{
     position: relative;
@@ -161,6 +161,6 @@
 }
 @media (min-width: 1377px) {
     .principalABC{
-        min-width: 80rem
+        width: 80rem
     }
   }

@@ -3,7 +3,7 @@ import ButtonResolve from "../components/ButtonResolve";
 import InfoABC from "../components/InfoABC";
 import TextFieldI from "../components/TextFieldI";
 import "../css/abc.css";
-import { ABCContext } from "../context/AbcContext";
+import { ABCContext} from "../context/AbcContext";
 import ResolveABC from "../components/ResolveABC";
 function ABCpage() {
   const {

@@ -8,7 +8,6 @@ function SwitchBtn({name,value, setValue, use}) {
           if (!use) {
             value ? setValue(false) : setValue(true);
           }
-            
         }}
       >
         <span

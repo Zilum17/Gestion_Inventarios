@@ -32,6 +32,7 @@ function GraphPOQ() {
     "#2b2d42",
   ]);
   const options = {
+    animationEnabled: true,	
     zoomEnabled: true,
     height: 500,
     theme: "dark1",

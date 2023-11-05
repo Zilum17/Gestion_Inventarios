@@ -15,7 +15,7 @@ function GraphEOQ() {
     q = Math.sqrt((2 * dataEOQ[0] * dataEOQ[1]) / dataEOQ[2]);
     d = (q * dataEOQ[2]) / 2 + (dataEOQ[0] * dataEOQ[1]) / q;
 
-    for (let i = q / 2; i < q * 2; i += 1 / 2) {
+    for (let i = q / 2; i < q * 2; i += 2) {
       CD.push({ y: (dataEOQ[0] * dataEOQ[1]) / i, x: i });
       CM.push({ y: (i * dataEOQ[2]) / 2, x: i });
       CT.push({
@@ -32,6 +32,7 @@ function GraphEOQ() {
     "#2b2d42",
   ]);
   const options = {
+    animationEnabled: true,	
     zoomEnabled: true,
     height: 500,
     theme: "dark1",

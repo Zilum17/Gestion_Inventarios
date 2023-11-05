@@ -6,19 +6,25 @@
   justify-content: center;
   min-width: 70rem;
   min-height: 50rem;
-  row-gap: 2rem;
   background: var(--fourth-color);
   overflow: hidden;
   transition: min-width .5s;
+  animation: forwards appear 1s;
+}
+#canvas{
+  width: 70rem;
+  height: 50rem;
 }
 .prompt{
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--fifth-color);
-  width: 50rem;
+  width: 30rem;
   height: 40rem;
-  font-size: 5rem;
+  bottom: 1rem;
+  font-size: 4rem;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 16px;
