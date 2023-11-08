@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar.jsx";
-import QDpage from "./pages/QD";
-import EOQpage from "./pages/EOQ";
+import QDpage from "./pages/QD.jsx";
+import EOQpage from "./pages/EOQ.jsx";
 import POQpage from "./pages/POQ.jsx";
 import ABCpage from "./pages/ABC.jsx";
 import "./css/base.css";

@@ -81,7 +81,7 @@ body{
     background: var(--fifth-color);
     cursor: pointer;
     transition: background .3s;
-
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 .naveoq_activate-rop_switch_btn{
     display: flex;
@@ -202,16 +202,17 @@ body{
     height: 4rem;
     font-size: 1.1rem;
     border: none;
-    border-bottom: 4px solid var(--second-color);
     cursor: pointer;
     overflow: hidden;
-    transition: color 1.5s;
+    transition: color 1.5s,box-shadow 1.5s;
     outline: none;
     font-weight: 500;
     letter-spacing: 1.5px;
+    border-bottom: 4px solid var(--second-color);
 }
 .info_action_button:hover{
     color: var(--fifth-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 .info_action_button > span{
     background: var(--second-color);
@@ -220,6 +221,7 @@ body{
     width: 20rem;
     transform: translateY(100%);
     transition: transform 1.5s;
+    transition-delay: transform 1.5s;
     border-radius: 50%;
     z-index: 1;
 }
