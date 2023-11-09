@@ -13,7 +13,7 @@ function GraphQD() {
       maxIteration =
         bestQDY * 2 > dataMultQD[1][i] ? dataMultQD[1][i] : bestQDY * 2;
       if (dataQD[3] <= 0) {
-        for (let j = dataMultQD[0][i]; j < maxIteration; j+=1) {
+        for (let j = dataMultQD[1][i]/2; j < maxIteration; j+=1) {
           console.log(dataQD[3])
           CT.push({
             y:
@@ -22,7 +22,7 @@ function GraphQD() {
           });
         }
       }else{
-        for (let j = dataMultQD[0][i]; j < maxIteration; j+=1) {
+        for (let j = dataMultQD[1][i]/2; j < maxIteration; j+=1) {
           console.log(dataQD[3])
           CT.push({
             y:
@@ -61,7 +61,7 @@ function GraphQD() {
       gridColor: "#2b2d42",
     },
     axisX: {
-      title: "Cantidad Optima",
+      title: "Cantidad Óptima",
       crosshair: {
         enabled: true,
         snapToDataPoint: true,

@@ -9,7 +9,7 @@ function Header() {
           <p>IO</p>
         </span>
         <span className={"header_title ".concat(toggle ? "" : "hide")}>
-          <p>Investigacion de Operaciones</p>
+          <p>Investigación de Operaciones</p>
         </span>
       </div>
     </header>

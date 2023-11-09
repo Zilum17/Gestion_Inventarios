@@ -51,7 +51,7 @@ function GraphPOQ() {
       gridColor: "#2b2d42",
     },
     axisX: {
-      title: "Cantidad Optima",
+      title: "Cantidad Óptima",
       crosshair: {
         enabled: true,
         snapToDataPoint: true,
