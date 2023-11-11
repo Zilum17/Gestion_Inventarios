@@ -1,12 +1,11 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { ToggleContext } from "../context/ToggleContext.jsx";
 import { EOQContext } from "../context/EoqContext.jsx";
 import { QDContext } from "../context/QdContext.jsx";
 import { POQContext } from "../context/PoqContext.jsx";
 import { ABCContext } from "../context/AbcContext.jsx";
-function NavButton({ linkTo, title, name, clas = " " }) {
-  const { toggle, setToggle } = useContext(ToggleContext);
+function NavButton({page, title, name, clas = " " }) {
+  const { toggle, setToggle, setPage} = useContext(ToggleContext);
   const { setSwttgl, setSwttgl_1, setVisible, setViewEOQ, setActivateEOQ } =
     useContext(EOQContext);
   const {
@@ -33,19 +32,17 @@ function NavButton({ linkTo, title, name, clas = " " }) {
     setIncrement2,
     setAlertABC,
   } = useContext(ABCContext);
-  const navigate = useNavigate();
   return (
     <li className={"nav_ul_li ".concat(toggle ? "" : "li-mini")}>
       <a
         className="nav_ul_li_link"
         onClick={() => {
-          navigate(linkTo, { replace: true });
-          const actualUrl = window.location.pathname;
+          setPage(page);
           setSwttgl(false);
           setSwttgl_1(false);
           setViewEOQ(false);
           setVisible("");
-          actualUrl != "/QD" ? setIncrement1(0) : "";
+          page != 2 ? setIncrement1(0) : "";
           setToggle(false);
           setActivateEOQ(false);
           setActivateQD(false);
@@ -63,7 +60,7 @@ function NavButton({ linkTo, title, name, clas = " " }) {
           setViewABC(false);
           setCheckABC(false);
           setActivateABC(false);
-          actualUrl != "/ABC" ? setIncrement2(0) : "";
+          page != 4 ? setIncrement2(0) : "";
           setAlertABC(false);
         }}
       >

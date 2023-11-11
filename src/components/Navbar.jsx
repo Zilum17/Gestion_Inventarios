@@ -24,11 +24,11 @@ function Navbar() {
         <Header />
 
         <ul className="nav_ul">
-          <NavButton linkTo = {'/'} title={<RiHome6Line />} name={"Home"} clas="big" />
-          <NavButton linkTo = {'/EOQ'} title={"EOQ"} name={"Economic Order Quantity"} />
-          <NavButton linkTo = {'/QD'} title={"QD"} name={"Quantity Discount"} />
-          <NavButton linkTo = {'/POQ'} title={"POQ"} name={"Production Order Quantity"} />
-          <NavButton linkTo = {'/ABC'} title={"ABC"} name={"ABC Analisys"} />
+          <NavButton page="0" title={<RiHome6Line />} name={"Home"} clas="big" />
+          <NavButton page="1" title={"EOQ"} name={"Economic Order Quantity"} />
+          <NavButton page="2" title={"QD"} name={"Quantity Discount"} />
+          <NavButton page="3" title={"POQ"} name={"Production Order Quantity"} />
+          <NavButton page="4" title={"ABC"} name={"ABC Analisys"} />
         </ul>
       </nav>
       {item}

@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 export const ToggleContext = createContext();
 
 export function ToggleContextProvider(props) {
+  const [page, setPage] = useState(0)
   const [toggle, setToggle] = useState(() => {
     const saved = localStorage.getItem("toggle");
     return /true/.test(saved) || false;
@@ -12,7 +13,7 @@ export function ToggleContextProvider(props) {
 
   
   return (
-    <ToggleContext.Provider value={{ toggle, setToggle }}>
+    <ToggleContext.Provider value={{ toggle, setToggle, page, setPage }}>
       {props.children}
     </ToggleContext.Provider>
   );
