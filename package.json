@@ -2,15 +2,17 @@
   "name": "react-app-io",
   "private": true,
   "version": "0.0.0",
-  "type":"module",
+  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "react-scripts start",
+    "build": "react-scripts build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@canvasjs/react-charts": "^1.0.0",
+    "@types/react": ">=16.14.8",
+    "react-scripts": "^5.0.1",
+    "@canvasjs/react-charts": "*",
     "module_name": "^1.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -27,5 +29,17 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "vite": "^4.4.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

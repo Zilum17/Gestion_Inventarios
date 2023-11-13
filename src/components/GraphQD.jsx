@@ -7,31 +7,37 @@ function GraphQD() {
   const { viewQD, swttglQD, bestQDX, bestQDY, dataQD, dataMultQD } =
     useContext(QDContext);
   let CT = [];
-  let maxIteration = 0;
+  let maxIteration = 0,
+    minIteration = 0;
   if (swttglQD && viewQD) {
     for (let i = 0; i < dataMultQD[0].length; i++) {
+      minIteration =
+        bestQDY / 4 < dataMultQD[0][i] ? dataMultQD[0][i] : bestQDY / 4;
       maxIteration =
         bestQDY * 2 > dataMultQD[1][i] ? dataMultQD[1][i] : bestQDY * 2;
+      maxIteration =
+        bestQDY * 2 > maxIteration ? maxIteration : bestQDY * 3;
       if (dataQD[3] <= 0) {
-        for (let j = dataMultQD[1][i]/2; j < maxIteration; j+=1) {
-          console.log(dataQD[3])
+        for (let j = minIteration; j < maxIteration; j += 1) {
           CT.push({
             y:
-              ((j / 2)*dataQD[2]) + ((dataQD[0] * dataQD[1]) / j) + (dataQD[0] * dataMultQD[2][i]),
+              (j / 2) * dataQD[2] +
+              (dataQD[0] * dataQD[1]) / j +
+              dataQD[0] * dataMultQD[2][i],
             x: j,
           });
         }
-      }else{
-        for (let j = dataMultQD[1][i]/2; j < maxIteration; j+=1) {
-          console.log(dataQD[3])
+      } else {
+        for (let j = minIteration; j < maxIteration; j += 1) {
           CT.push({
             y:
-              ((j / 2)*(dataMultQD[2][i] * dataQD[3])) + ((dataQD[0] * dataQD[1]) / j) + (dataQD[0] * dataMultQD[2][i]),
+              (j / 2) * (dataMultQD[2][i] * dataQD[3]) +
+              (dataQD[0] * dataQD[1]) / j +
+              dataQD[0] * dataMultQD[2][i],
             x: j,
           });
         }
       }
-      
     }
   }
   CanvasJS.addColorSet("colors", [
@@ -42,7 +48,7 @@ function GraphQD() {
     "#2b2d42",
   ]);
   const options = {
-    animationEnabled: true,	
+    animationEnabled: true,
     zoomEnabled: true,
     height: 500,
     theme: "dark1",
